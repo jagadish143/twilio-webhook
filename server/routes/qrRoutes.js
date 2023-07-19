@@ -17,6 +17,7 @@ const getData = async (req, res) => {
 
 //Handling POST Requests
 const AddData = async (req, res) => {
+  console.log('Post Request Made');
   const response = await req.body;
 
   const qrID = response.sid;
