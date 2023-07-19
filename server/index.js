@@ -36,7 +36,7 @@ mongoose
 
 app.use(QrRotes);
 
-const port = 3000;
+const port = process.env.PORT || 8000;
 app.listen(port, () => {
   console.log(`App is running at ${port}`);
 });
