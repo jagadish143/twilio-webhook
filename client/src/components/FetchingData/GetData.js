@@ -7,7 +7,7 @@ const GetData = () => {
   useEffect(() => {
     const fetchData = async () => {
       console.log('Fetching Data');
-      const addData = await axios.get('http://localhost:3000/');
+      const addData = await axios.get('/');
       console.log(addData.data.data.data);
       setData(addData.data.data.data);
     };
