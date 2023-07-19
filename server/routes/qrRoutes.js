@@ -8,7 +8,7 @@ const getData = async (req, res) => {
   const allData = await UserData.find({});
 
   res.status(201).json({
-    status: 'success',
+    status: 'successs',
     data: {
       data: allData,
     },
