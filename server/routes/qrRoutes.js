@@ -23,9 +23,9 @@ const AddData = async (req, res) => {
     const response = req.body;
     console.log(response);
 
-    const qrID = response.sid;
-    const userMobile = response.from;
-    const receivedMessage = response.body;
+    const qrID = Date.now() + '';
+    const userMobile = response.From;
+    const receivedMessage = response.Body;
     const saveData = {
       qrId: qrID,
       mobile: userMobile,
