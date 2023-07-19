@@ -19,7 +19,7 @@ const getData = async (req, res) => {
 const AddData = async (req, res) => {
   try {
     console.log('Post Request Made');
-    const response = await req.body;
+    const response = req.body;
 
     const qrID = response.sid;
     const userMobile = response.from;
