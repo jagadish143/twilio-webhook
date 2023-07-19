@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const userDataSchema = new mongoose.Schema({
   qrId: {
-    type: Number,
+    type: String,
     unique: true,
   },
   mobile: {

@@ -38,6 +38,6 @@ const AddData = async (req, res) => {
   });
 };
 
-route.get('/', getData).post('/addData', AddData);
+route.get('/', getData).post('/send-response', AddData);
 
 module.exports = route;
