@@ -17,26 +17,35 @@ const getData = async (req, res) => {
 
 //Handling POST Requests
 const AddData = async (req, res) => {
-  console.log('Post Request Made');
-  const response = await req.body;
+  try {
+    console.log('Post Request Made');
+    const response = await req.body;
 
-  const qrID = response.sid;
-  const userMobile = response.from;
-  const receivedMessage = response.body;
-  const saveData = {
-    qrId: qrID,
-    mobile: userMobile,
-    message: receivedMessage,
-  };
-  const newData = await UserData.create(saveData);
+    const qrID = response.sid;
+    const userMobile = response.from;
+    const receivedMessage = response.body;
+    const saveData = {
+      qrId: qrID,
+      mobile: userMobile,
+      message: receivedMessage,
+    };
+    const newData = await UserData.create(saveData);
 
-  console.log(newData);
-  res.status(201).json({
-    status: 'Success',
-    data: {
-      data: saveData,
-    },
-  });
+    console.log(newData);
+    res.status(201).json({
+      status: 'Success',
+      data: {
+        data: saveData,
+      },
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: 'Error',
+      message: {
+        Error: error,
+      },
+    });
+  }
 };
 
 route.get('/', getData).post('/send-response', AddData);
