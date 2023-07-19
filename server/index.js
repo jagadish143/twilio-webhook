@@ -6,6 +6,8 @@ const cors = require('cors');
 const QrRotes = require('./routes/qrRoutes');
 
 const app = express();
+// Middleware to parse URL-encoded bodies
+app.use(express.urlencoded({ extended: true }));
 
 app.use(cors());
 
